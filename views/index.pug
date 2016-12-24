@@ -1,0 +1,14 @@
+html
+	head
+		title Reddit notification center
+		link(rel="icon" href="/images/icon-192x192.png")
+		//include manifest.json for chrome
+		link(rel="manifest" href="manifest.json")
+	body
+		h1 Hello #{name}! this is notif center
+		input(type="button" value="Update Sw!" name="updateBtn" id="updateBtn")
+		ul
+			each val, index in subMap
+				li
+					a(href=val.url target="_blank" onclick="hideLink(\""+val.id+"\")" id=val.id ) #{val.title}
+		script(src="/js/index.js")
